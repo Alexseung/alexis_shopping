@@ -9,7 +9,7 @@ export default function Menu() {
   };
 
   return (
-    <div className='border border-red-500 my-4 flex flex-col min-h-screen'>
+    <div className='border border-red-500 my-4 flex flex-col h-44'>
       <p>Footer</p>
     </div>
   );

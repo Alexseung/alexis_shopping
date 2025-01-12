@@ -4,10 +4,16 @@
 
 @layer base {
   body {
-    background-color: #14161b;
+    background-color: #ffff;
   }
 }
 
 .slick-slide > div {
   margin: 0 10px;
+}
+.slick-next::before,
+.slick-prev::before {
+  color: black !important; /* 화살표 색상 */
+  font-size: 40px; /* 화살표 크기 */
+  content: ''; /* Slick에서 기본 제공되는 화살표 모양 */
 }

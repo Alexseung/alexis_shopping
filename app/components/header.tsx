@@ -9,13 +9,37 @@ export default function Menu() {
     router.push(`/menu/${menuItem}`); // 동적 경로로 이동
   };
 
+  const goHome = () => {
+    router.push('/');
+  };
+
   return (
-    <div className='border border-red-500 my-4'>
-      <div className='flex justify-between mx-32 border border-black'>
-        <p>Header</p>
-        <div onClick={() => goToPage('one')}>One</div>
-        <div onClick={() => goToPage('two')}>Two</div>
-        <div onClick={() => goToPage('three')}>Three</div>
+    <div className='border border-red-500 my-4 py-4'>
+      <div className='flex justify-between mx-32 border border-black text-xl font-bold'>
+        <div
+          className='hover:cursor-pointer hover:text-amber-200'
+          onClick={() => goHome()}
+        >
+          Home
+        </div>
+        <div
+          className='hover:cursor-pointer hover:text-amber-200'
+          onClick={() => goToPage('faqs')}
+        >
+          FAQs
+        </div>
+        <div
+          className='hover:cursor-pointer hover:text-amber-200'
+          onClick={() => goToPage('Commentsrequests')}
+        >
+          Comments/requests
+        </div>
+        <div
+          className='hover:cursor-pointer hover:text-amber-200'
+          onClick={() => goToPage('cart')}
+        >
+          Cart
+        </div>
       </div>
     </div>
   );
