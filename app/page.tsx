@@ -1,6 +1,6 @@
 import React from 'react';
 import MainSliders from './components/mainSliders';
-import Something from './components/something';
+import MainCategory from './components/mainCategory';
 
 export default function () {
   return (
@@ -8,7 +8,7 @@ export default function () {
       <div className='border border-red-500'>
         <MainSliders />
       </div>
-      <Something />
+      <MainCategory />
     </>
   );
 }

@@ -19,7 +19,10 @@ export default function Layout({children}: {children: React.ReactNode}) {
       {/* 반드시 <html> 태그 포함 */}
       <body>
         <div className='flex flex-col min-h-screen'>
-          <div className='text-2xl mb-4 hover:cursor-pointer' onClick={goHome}>
+          <div
+            className='text-4xl font-bold text-center mt-4 mb-4 hover:cursor-pointer'
+            onClick={goHome}
+          >
             Name & Logo
           </div>
           <Header />

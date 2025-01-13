@@ -52,9 +52,9 @@ export default function Home() {
       <div className='my-4 px-10 overflow-hidden'>
         <Slider {...settings}>
           {imgList.map(item => (
-            <div className='bg-gray-200 h-[200px] text-black rounded-xl'>
+            <div className='bg-gray-200 h-[300px] text-black rounded-xl'>
               <div className='rounded-t-xl bg-indigo-500 flex justify-center items-center'>
-                <img src={item.img} className='h-16 w-32 rounded-full' />
+                <img src={item.img} className='h-28 w-32 rounded-full' />
               </div>
               <div className='flex flex-col justify-center items-center gap-4 p-4'>
                 <p className='text-xl font-semibold'>{item.name}</p>
