@@ -30,7 +30,7 @@ export default function Menu() {
         </div>
         <div
           className='hover:cursor-pointer hover:text-amber-200'
-          onClick={() => goToPage('Commentsrequests')}
+          onClick={() => goToPage('commentsrequests')}
         >
           Comments/requests
         </div>
