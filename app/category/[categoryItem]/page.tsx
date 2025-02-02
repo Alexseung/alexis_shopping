@@ -15,7 +15,7 @@ const CategoryPage = ({params}: {params: {categoryItem: string}}) => {
     case 'beauty':
       PageComponent = Beauty;
       break;
-    case 'food':
+    case 'living':
       PageComponent = Living;
       break;
     default:
