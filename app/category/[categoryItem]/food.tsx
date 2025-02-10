@@ -1,5 +1,6 @@
 'use client';
 import {useCart} from '../../components/context/CartContext';
+import ShowListItmes from '../../components/ShowListItems';
 
 export default function FoodPage() {
   const {addToCart} = useCart();
@@ -24,21 +25,7 @@ export default function FoodPage() {
   return (
     <>
       <h1>Food LIst</h1>
-      <div className='grid grid-cols-3'>
-        {foodList.map((food, index) => (
-          <div key={index} className='h-44 border border-blue-600 m-2 p-2'>
-            <h2>{food.name}</h2>
-            <p>{food.price}원</p>
-            <p>{food.category}</p>
-            <button
-              className='bg-red-500 text-white p-1 rounded-md'
-              onClick={() => addToCart(food)}
-            >
-              Add Cart
-            </button>
-          </div>
-        ))}
-      </div>
+      <ShowListItmes List={foodList} />
     </>
   );
 }

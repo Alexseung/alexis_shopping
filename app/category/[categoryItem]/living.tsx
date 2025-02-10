@@ -1,5 +1,6 @@
 'use client';
 import {useCart} from '../../components/context/CartContext';
+import ShowListItmes from '../../components/ShowListItems';
 
 export default function LivingPage() {
   const {addToCart} = useCart();
@@ -24,21 +25,7 @@ export default function LivingPage() {
   return (
     <>
       <h1>Food LIst</h1>
-      <div className='grid grid-cols-3'>
-        {livingList.map((living, index) => (
-          <div key={index} className='h-44 border border-blue-600 m-2 p-2'>
-            <h2>{living.name}</h2>
-            <p>{living.price}원</p>
-            <p>{living.category}</p>
-            <button
-              className='bg-red-500 text-white p-1 rounded-md'
-              onClick={() => addToCart(living)}
-            >
-              Add Cart
-            </button>
-          </div>
-        ))}
-      </div>
+      <ShowListItmes List={livingList} />
     </>
   );
 }

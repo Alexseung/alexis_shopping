@@ -1,10 +1,10 @@
 'use client';
 
-import {useState} from 'react';
 import {useCart} from '../../components/context/CartContext';
+import ShowListItmes from '../../components/ShowListItems';
 
 export default function BeautyPage() {
-  const {addToCart} = useCart();
+  const {addToCart, isClicked, toggleClicked} = useCart();
   const beautyList = [
     {name: 'lipstick', price: 25000, category: 'makeup'},
     {name: 'moisturizer', price: 40000, category: 'skincare'},
@@ -23,38 +23,15 @@ export default function BeautyPage() {
     {name: 'hair straightener', price: 90000, category: 'appliance'},
   ];
 
-  const [isClicked, setIsClicked] = useState<{[key: number]: boolean}>({});
-
   const handleClick = (index: number, beauty: any) => {
-    setIsClicked(prev => ({
-      ...prev,
-      [index]: !prev[index], // 현재 클릭된 아이템만 변경
-    }));
+    toggleClicked(index);
     addToCart(beauty);
   };
 
   return (
     <>
       <h1>Food LIst</h1>
-      <div className='grid grid-cols-3'>
-        {beautyList.map((beauty, index) => (
-          <div key={index} className='h-44 border border-blue-600 m-2 p-2'>
-            <h2>{beauty.name}</h2>
-            <p>{beauty.price}원</p>
-            <p>{beauty.category}</p>
-            <button
-              className={`${
-                isClicked[index]
-                  ? 'bg-red-500 text-white p-1 rounded-md'
-                  : 'bg-blue-500 text-white p-1 rounded-md'
-              }`}
-              onClick={() => handleClick(index, beauty)}
-            >
-              Add Cart
-            </button>
-          </div>
-        ))}
-      </div>
+      <ShowListItmes List={beautyList} />
     </>
   );
 }
